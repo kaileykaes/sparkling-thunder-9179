@@ -19,9 +19,10 @@ RSpec.describe '/movies/:id' do
         visit "/movies/#{@when_bess_got_in_wrong.id}"
         within("#stats") do 
           expect(page).to have_content(@when_bess_got_in_wrong.title)
-          expect(page).to have_content(@when_bess_got_in_wrong.creation_year)
-          expect(page).to have_content(@when_bess_got_in_wrong.genre)
+          expect(page).to have_content("Created: #{@when_bess_got_in_wrong.creation_year}")
+          expect(page).to have_content("Genre: #{@when_bess_got_in_wrong.genre}")
         end
       end
     end
   end
+end
